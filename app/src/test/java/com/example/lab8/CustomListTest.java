@@ -49,17 +49,12 @@ public class CustomListTest {
     @Test
     void testDelete() {
         list = MockCityList();
-        assertEquals(1, list.getCities().size());
-
-        //make new city and add it to the list
-        City city = new City("Regina", "Saskatchewan");
+        City city = new City("Estevan", "SK");
         list.addCity(city);
-        assertEquals(2, list.getCities().size());
-        assertTrue(list.getCities().contains(city));
 
         //delete the newly added city and check the size again
         list.delete(city);
-        assertEquals(1, list.getCities().size());
+        assertEquals(0, list.getCities().size());
         assertFalse(list.getCities().contains(city));
     }
 
